@@ -1,11 +1,24 @@
+" I'm not sure about all these commands, but it seems to be good
+set commentary
+
+set scrolloff=12
+set showmode
+set showcmd
+set wildmenu
+set ruler
+set nowrap
+
+" Search
+set ignorecase
+set hlsearch
+set incsearch
+
 " Further settings are based upon this guide:
 " https://towardsdatascience.com/the-essential-ideavim-remaps-291d4cd3971b
 
 "" Common settings -------------------------
 set clipboard+=unnamed
 set clipboard+=ideaput
-set scrolloff=5
-set incsearch " highlight the search string while typing
 set number relativenumber
 
 " Editing and Reloading the Config ===================================
@@ -15,14 +28,14 @@ nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR> " reload ideavimrc
 " ====================================================================
 
 " The Leader Key =====================================================
-let mapleader=" "
+let mapleader=' '
 " ====================================================================
 
 " The Distraction Free / Zen mode ===================================
 " Author and me like Vim's clean interface, and widgets of IDE may distract you. Plus, having visible widgets can
 " ‘trick’ you to use the mouse instead of using a shortcut. Always remember: You can't click on what you can't see.
 " nnoremap <c-z> :action ToggleDistractionFreeMode<CR> " Distraction free mode
-nnoremap <c-z> :action ToggleZenMode<CR> " Zen mode
+noremap <Leader>zz :action ToggleZenMode<CR>
 " ====================================================================
 
 " Terminal ===========================================================
@@ -30,7 +43,7 @@ nnoremap <c-z> :action ToggleZenMode<CR> " Zen mode
 nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 " Action Terminal.OpenInTerminal open a new terminal directly in the parent folder of the current file in the editor.
 " This is very useful with deeply nested folder structures, since it avoids having to cd to the right folder.
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <leader>tt :action Terminal.OpenInTerminal<CR>
 " ====================================================================
 
 " Window Navigation ==================================================
